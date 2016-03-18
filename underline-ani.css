@@ -1,0 +1,35 @@
+/* 
+	underline-ani.css 
+	based on idea http://codepen.io/deriboru/pen/wKBvOm
+*/
+.link {
+    position: relative;
+    color: #f03;
+    text-decoration: none;
+    text-shadow:
+        -2px 1px 0px #fff,
+         2px 1px 0px #fff,
+        -1px 1px 0px #fff,
+         1px 1px 0px #fff,
+        -2px 2px 0px #fff,
+         2px 2px 0px #fff,
+        -1px 2px 0px #fff,
+         1px 2px 0px #fff;
+}
+
+.link::after {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    transition: width .25s ease-in;
+}
+
+.link:hover::after {
+    width: 100%;
+}
